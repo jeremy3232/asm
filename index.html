@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Number Generator</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-image: url('caishen.jpg'); /* Specify the path to your background image */
+    background-size: cover; /* Cover the entire background */
+    background-repeat: no-repeat; /* Prevent repeating of the background image */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Fixed background image */
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7); /* semi-transparent white */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+  h1 {
+    text-align: center;
+  }
+
+  #randomNumbers {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    color: red;
+  }
+
+  #refreshButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  #refreshButton:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>恭喜发财，有买有希望 HUAT AH!!!</h1>
+  <div id="randomNumbers"></div>
+  <button id="refreshButton" onclick="generateRandomNumbers()">Refresh Numbers</button>
+  <h1>中了分我一点 哈哈 请我吃饭也可以</h1>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    generateRandomNumbers();
+  });
+
+  function generateRandomNumbers() {
+    var randomNumbersDiv = document.getElementById("randomNumbers");
+    var numbers = [];
+    for (var i = 0; i < 4; i++) {
+      numbers.push(Math.floor(Math.random() * 9) + 1);
+    }
+    randomNumbersDiv.innerHTML = numbers.join(", ");
+  }
+</script>
+</body>
+</html>
+
